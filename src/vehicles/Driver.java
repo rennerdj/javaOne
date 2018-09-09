@@ -18,6 +18,7 @@ public class Driver {
         // TODO code application logic here
  
         promptUser();
+       
     }
     
     /**
