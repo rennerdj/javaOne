@@ -8,52 +8,53 @@ package vehicles;
 import javax.swing.JOptionPane;
 
 /**
- *fdsafdsfasdfdsafsadfasdfasdfasdfsadf
+ * fdsafdsfasdfdsafsadfasdfasdfasdfsadf
+ *
  * @author mydjr
  */
 public class CreateATruck {
-    
+
     public static void main(String[] args) {
         promptUser();
     }
 
     private static void promptUser() {
         String[] cab = new String[3];
-        cab [0] = REGULAR;
-        cab [1] = SUPERCAB;
-        cab [2] = DOUBLE_CAB;
-        
-        Object selectedCab = JOptionPane.showInputDialog(null,"Choose a Cab Type", "Cab Selection",JOptionPane.QUESTION_MESSAGE, null, cab, DOUBLE_CAB);
-                
-        String [] bedLength = new String [3];
+        cab[0] = REGULAR;
+        cab[1] = SUPERCAB;
+        cab[2] = DOUBLE_CAB;
+
+        Object selectedCab = JOptionPane.showInputDialog(null, "Choose a Cab Type", "Cab Selection", JOptionPane.QUESTION_MESSAGE, null, cab, DOUBLE_CAB);
+
+        String[] bedLength = new String[3];
         bedLength[0] = SHORT__BED;
         bedLength[1] = MEDIUM__BED;
         bedLength[2] = LONG__BED;
-        
-        final Object selectedBedLength = JOptionPane.showInputDialog(null, "Choose a Bed Length","Bed Selection", JOptionPane.QUESTION_MESSAGE, null, bedLength, MEDIUM__BED);
-        
+
+        final Object selectedBedLength = JOptionPane.showInputDialog(null, "Choose a Bed Length", "Bed Selection", JOptionPane.QUESTION_MESSAGE, null, bedLength, MEDIUM__BED);
+
         if (selectedCab.equals(DOUBLE_CAB)) {
             if (selectedBedLength.equals(LONG__BED)) {
                 JOptionPane.showMessageDialog(null, "Sorry but you cannot choose both a Double Cab and Long Bed");
             } else {
                 JOptionPane.showMessageDialog(null, "The Selections are valid. Cab:" + selectedCab + "Bed: " + selectedBedLength);
-                
-            } 
-        } else if (selectedCab.equals(REGULAR))
+
+            }
+        } else if (selectedCab.equals(REGULAR)) {
             if (selectedBedLength.equals(SHORT__BED)) {
-                JOptionPane.showMessageDialog(null,"Sorry, but you cannot choose both a Regular Cab and A Short Bed.");
+                JOptionPane.showMessageDialog(null, "Sorry, but you cannot choose both a Regular Cab and A Short Bed.");
             } else {
-                JOptionPane.showMessageDialog(null,"Your selections are valid. Cab: " + selectedCab + "Bed: " + selectedBedLength);
-            } else {
+                JOptionPane.showMessageDialog(null, "Your selections are valid. Cab: " + selectedCab + "Bed: " + selectedBedLength);
+            }
+        } else {
             JOptionPane.showMessageDialog(null, "You Chose a SuperCab");
-        } 
+        }
     }
     private static final String LONG__BED = "Long Bed";
     private static final String MEDIUM__BED = "Medium Bed";
     private static final String SHORT__BED = "Short Bed";
-    
-    
+
     private static final String REGULAR = "Regular";
     private static final String SUPERCAB = "Supercab";
     private static final String DOUBLE_CAB = "Double Cab";
- }
+}
