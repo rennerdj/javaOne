@@ -5,6 +5,8 @@
  */
 package vehicles;
 
+import javax.swing.JOptionPane;
+
 /**
  * This represents a driver of a vehicle
  * @author mydjr
@@ -28,17 +30,17 @@ public class Driver {
     public static void promptUser() {
         int mpg = 25;
         double gallonsOfGas = 10;
-        int distance = 50555555;
+       String journey = JOptionPane.showInputDialog("How far do you want to go?");
+        int distance = Integer.parseInt(journey);
         
         double gallonsConsumed = distance / mpg;
         gallonsOfGas = gallonsOfGas - gallonsConsumed;
-       
         if(gallonsOfGas >= 0) {
             System.out.println("Gas Consumed: " + gallonsConsumed + " Gallons Remaining: " + gallonsOfGas);
         } else { 
             System.out.println("You ran out of Gas!");
             
-        }
+        } 
                 
         
         
