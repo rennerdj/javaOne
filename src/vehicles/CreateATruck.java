@@ -44,8 +44,15 @@ public class CreateATruck {
             if (selectedBedLength.equals(SHORT__BED)) {
                 JOptionPane.showMessageDialog(null, "Sorry, but you cannot choose both a Regular Cab and A Short Bed.");
             } else {
+                JOptionPane.showMessageDialog(null, "Your selections are valid. Cab: " + selectedCab + " Bed: " + selectedBedLength);
+            }
+        } else if (selectedCab.equals(SUPERCAB)) {
+            if (selectedBedLength.equals(SHORT__BED)) {
+                JOptionPane.showMessageDialog(null, "Sorry, but you cannot choose both a Super Cab and A Short Bed.");
+            } else {
                 JOptionPane.showMessageDialog(null, "Your selections are valid. Cab: " + selectedCab + "Bed: " + selectedBedLength);
             }
+
         } else {
             JOptionPane.showMessageDialog(null, "You Chose a SuperCab");
         }
