@@ -8,7 +8,7 @@ package vehicles;
 import javax.swing.JOptionPane;
 
 /**
- *
+ *fdsafdsfasdfdsafsadfasdfasdfasdfsadf
  * @author mydjr
  */
 public class CreateATruck {
@@ -19,11 +19,14 @@ public class CreateATruck {
 
     private static void promptUser() {
         String[] cab = new String[3];
-        cab [0] = "Regular";
-        cab [1] = "Supercab";
-        cab [2] = "Supercrew";
+        cab [0] = REGULAR;
+        cab [1] = SUPERCAB;
+        cab [2] = SUPERCREW;
         
-        Object selectedCab = JOptionPane.showInputDialog(null,"Choose a Cab Type", "Cab Selection",JOptionPane.QUESTION_MESSAGE, null, cab, "Supercrew");
+        Object selectedCab = JOptionPane.showInputDialog(null,"Choose a Cab Type", "Cab Selection",JOptionPane.QUESTION_MESSAGE, null, cab, SUPERCREW);
         System.out.println("Selected Cab: " + selectedCab);
     }
+    private static final String REGULAR = "Regular";
+    private static final String SUPERCAB = "Supercab";
+    private static final String SUPERCREW = "Supercrew";
  }
