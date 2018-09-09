@@ -38,8 +38,15 @@ public class CreateATruck {
             } else {
                 JOptionPane.showMessageDialog(null, "The Selections are valid. Cab:" + selectedCab + "Bed: " + selectedBedLength);
                 
-            }
-        }
+            } 
+        } else if (selectedCab.equals(REGULAR))
+            if (selectedBedLength.equals(SHORT__BED)) {
+                JOptionPane.showMessageDialog(null,"Sorry, but you cannot choose both a Regular Cab and A Short Bed.");
+            } else {
+                JOptionPane.showMessageDialog(null,"Your selections are valid. Cab: " + selectedCab + "Bed: " + selectedBedLength);
+            } else {
+            JOptionPane.showMessageDialog(null, "You Chose a SuperCab");
+        } 
     }
     private static final String LONG__BED = "Long Bed";
     private static final String MEDIUM__BED = "Medium Bed";
