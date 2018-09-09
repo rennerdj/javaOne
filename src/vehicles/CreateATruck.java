@@ -24,7 +24,9 @@ public class CreateATruck {
         cab [2] = SUPERCREW;
         
         Object selectedCab = JOptionPane.showInputDialog(null,"Choose a Cab Type", "Cab Selection",JOptionPane.QUESTION_MESSAGE, null, cab, SUPERCREW);
-        System.out.println("Selected Cab: " + selectedCab);
+        
+        JOptionPane.showMessageDialog(null, "Selected Cab: " + selectedCab);
+        
     }
     private static final String REGULAR = "Regular";
     private static final String SUPERCAB = "Supercab";
