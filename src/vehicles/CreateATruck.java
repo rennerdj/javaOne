@@ -9,7 +9,7 @@ import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 
 /**
- * fdsafdsfasdfdsafsadfasdfasdfasdfsadf
+ *
  *
  * @author mydjr
  */
@@ -20,6 +20,14 @@ public class CreateATruck {
     }
 
     private static void promptUser() {
+        String name = promptForName();
+
+        // Validate the name
+        if (name == null || name.trim().isEmpty()){
+            JOptionPane.showMessageDialog(null, "You Did Not Enter a Name");
+        }else {
+            JOptionPane.showMessageDialog(null,"Welcome " + name);
+        }
         String[] cab = new String[3];
         cab[0] = REGULAR;
         cab[1] = SUPERCAB;
@@ -77,4 +85,15 @@ public class CreateATruck {
     private static final String REGULAR = "Regular";
     private static final String SUPERCAB = "Supercab";
     private static final String DOUBLE_CAB = "Double Cab";
+
+    private static String promptForName() {
+        String name = JOptionPane.showInputDialog("What is your name?");
+
+        if (name.length() < 2) {
+            return null;
+        } else {
+            return name;
+        }
+
+    }
 }
