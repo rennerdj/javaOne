@@ -31,6 +31,8 @@ public class Driver {
         String milesPerGallon = JOptionPane.showInputDialog("How many Miles per Gallon does the vehicle get?");
         int mpg = Integer.parseInt(milesPerGallon);
         double gallonsOfGas = 10;
+        
+        
         String journey = JOptionPane.showInputDialog("How far do you want to go?");
         int distance = Integer.parseInt(journey);
         
