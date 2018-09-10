@@ -62,16 +62,27 @@ public class Driver {
         
         final String strDistanceTravelled = JOptionPane.showInputDialog("Enter distance to travel");
         final int distance = Integer.parseInt(strDistanceTravelled);
-        System.out.println(myVehicle.toString());
+        
+ 
+        //print the current state of this vehicle
+        System.out.println("My Vehicle: " + myVehicle.toString());
         
         //move the vehicle
         myVehicle.go(distance);
 
-
-        //Print the current state of the vehicle
+         //Print the current state of the vehicle
         System.out.println(myVehicle.toString());    
     
-    
+        //create a new Object --- your Vehicle
+        Vehicle yourVehicle = new Vehicle (25,25,25000);
+        
+        System.out.println("Your Vehicle: " + yourVehicle);
+        
+        yourVehicle.go(distance);
+        
+        System.out.println("Your Vehicle, after move: " + yourVehicle);
+        
+        System.out.println("My Vehicle: " + myVehicle.toString());
     }
     
 }

@@ -14,7 +14,21 @@ public class Vehicle {
     private int milesPerGallon;
     private int odometer;
     
-   public void go (int distance) {
+  
+    public Vehicle(){
+        
+    }
+    
+    public Vehicle(double gallonsOfGas, int inMilesPerGallon, int inOdometer){
+        this.gallonsOfGas = gallonsOfGas;
+        milesPerGallon = inMilesPerGallon;
+        odometer = inOdometer;
+        
+    }
+    
+    
+    
+    public void go (int distance) {
        //compute gallons consumed
        double gallonsConsumed = distance/milesPerGallon;
        
