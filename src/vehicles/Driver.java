@@ -16,6 +16,9 @@ public class Driver {
     /**
      * @param args the command line arguments
      */
+    
+    
+    
     public static void main(String[] args) {
         // TODO code application logic here
  
@@ -28,25 +31,47 @@ public class Driver {
      */
     
     public static void promptUser() {
-        String milesPerGallon = JOptionPane.showInputDialog("How many Miles per Gallon does the vehicle get?");
-        int mpg = Integer.parseInt(milesPerGallon);
-        double gallonsOfGas = 10;
+        //create a variable of type Vehicle
+        
+        Vehicle myVehicle = new Vehicle();
+        
+        // print the current state of the vehicle
+        String dashboard = myVehicle.toString();
+        System.out.println(dashboard);
+        
+        // prompt user 
+        
+        String strGallonsOfGas = JOptionPane.showInputDialog("Enter Gallons of gas");
+        
+        //convert the String return to a double
+        
+        double dblGallonsOfGas = Double.parseDouble(strGallonsOfGas);
+        
+        myVehicle.setGallonsOfGas(dblGallonsOfGas);
         
         
-        String journey = JOptionPane.showInputDialog("How far do you want to go?");
-        int distance = Integer.parseInt(journey);
+        String strMilesPerGallon = JOptionPane.showInputDialog("Enter Miles per Gallon");
+        int intMilesPerGallon = Integer.parseInt(strMilesPerGallon);
         
-        double gallonsConsumed = distance / mpg;
-        gallonsOfGas = gallonsOfGas - gallonsConsumed;
-        if(gallonsOfGas >= 0) {
-            System.out.println("Gas Consumed: " + gallonsConsumed + " Gallons Remaining: " + gallonsOfGas);
-        } else { 
-            System.out.println("You ran out of Gas!");
-            
-        } 
-                
+        myVehicle.setMilesPerGallon(intMilesPerGallon);
         
+        final String strOdometer = JOptionPane.showInputDialog("Enter Odometer: ");
+        final int intOdometer = Integer.parseInt(strOdometer);
         
+        myVehicle.setOdometer(intOdometer);
+        
+        final String strDistanceTravelled = JOptionPane.showInputDialog("Enter distance to travel");
+        final int distance = Integer.parseInt(strDistanceTravelled);
+        System.out.println(myVehicle.toString());
+        
+        //move the vehicle
+        myVehicle.go(distance);
+
+
+        //Print the current state of the vehicle
+        System.out.println(myVehicle.toString());    
+    
+    
     }
     
 }
