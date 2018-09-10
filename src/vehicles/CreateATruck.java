@@ -23,10 +23,10 @@ public class CreateATruck {
         String name = promptForName();
 
         // Validate the name
-        if (name == null || name.trim().isEmpty()){
+        if (name == null || name.trim().isEmpty()) {
             JOptionPane.showMessageDialog(null, "You Did Not Enter a Name");
-        }else {
-            JOptionPane.showMessageDialog(null,"Welcome " + name);
+        } else {
+            JOptionPane.showMessageDialog(null, "Welcome " + name);
         }
         String[] cab = new String[3];
         cab[0] = REGULAR;
@@ -69,8 +69,51 @@ public class CreateATruck {
         } else if (intTowingCapacity >= 10000 && selectedEngine.equals(LITER_27)) {
             JOptionPane.showMessageDialog(null, "You Will Need A Bigger Engine To Tow That Much Weight");
         }
+        
+        //set possible Trim Levels
+        String [] possibleTrimLevels = {LIMITED, PLATINUM, KING__RANCH, LARIAT, XLT, XL};
+        
+        //prompt the user for Trim Level
+        
+        Object selectedTrim = JOptionPane.showInputDialog(null, "Choose a Trim Type", "Trim Selection", JOptionPane.QUESTION_MESSAGE, null, possibleTrimLevels, XL);
+       
+        //convert user's choice to a String
+        
+        String trimLevel = selectedTrim.toString();
+        
+        StringBuilder selectedOptions = new StringBuilder();
+        
+        // build option packages based on trim selection.
+        
+        switch (trimLevel) {
+           
+            case LIMITED: 
+                 selectedOptions.append("| Twin Moonroof |");
+            case PLATINUM:
+                 selectedOptions.append("| Voice Activated Navigation |");
+            case KING__RANCH:
+                 selectedOptions.append("| 5.0 V8 |");
+            case LARIAT:
+                 selectedOptions.append("| Rear View Camera |");
+            case XLT:
+                 selectedOptions.append("| Power Equipment |");
+            case XL:
+                selectedOptions.append("| Automatic Transmission |");
+            break;
+            default :
+                 selectedOptions.append("I do not recognize this trim level.");
+            
+            break;
+        } 
+            JOptionPane.showMessageDialog(null, "Selected Options: " + selectedOptions.toString());
 
     }
+    private static final String XL = "XL";
+    private static final String XLT = "XLT";
+    private static final String LARIAT = "Lariat";
+    private static final String KING__RANCH = "King Ranch";
+    private static final String PLATINUM = "Platinum";
+    private static final String LIMITED = "Limited";
     private static final String LITER_27 = "2.7 L";
     private static final String LITER_35 = "3.5 L";
     private static final String LITER_50 = "5.0 L";
